@@ -18,17 +18,16 @@ class Photographer:
 
         self.age = age if self.validate_age(age) else "Sorry! You are underage."
 
+        self.address = address if self.validate_address(address) else "Invalid Address!"
+
+        self.datetime = datetime if self.validate_datetime(datetime) else "Date and time format should be yyyy/mm/dd and hh:mm:ss!"
+
         # if self.validate_photos(photos):
         #     print("Photographer created with valid data")
         #     self.photos = photos
         # else:
         #     print("Invalid data is inserted")
         #     self.photos = list()
-
-        self.photos = photos
-        self.address = address
-        self.datetime = datetime
-
     def get_photos_desc(self):
         print(f"\nThe photos of the photographer { self.first_name } { self.last_name}:")
         for photo in (self.photos):
@@ -65,11 +64,20 @@ class Photographer:
     def validate_phone_no(self,_phone_no):
         if isinstance(_phone_no, str):
             if(_phone_no.startswith("+977")): return True
-    def validate_address(self,):
-        pass
+            else: return False  
 
-    def validate_datetime(self,):
-        pass
+    def validate_address(self,_address):
+        if isinstance(_address, str):
+            return True
+        else:
+            return False 
+
+    def validate_datetime(self,_datetime):
+        if isinstance(_datetime, str):
+            return True
+        else:
+            return False 
+
 
     def validate_id(self,):
         pass
