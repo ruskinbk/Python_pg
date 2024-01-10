@@ -79,6 +79,7 @@ def photographer_menu():
     """
     This is photographer menu
     """
+    print("\n###############################################\n")
     print("Welcome to the Photographers Information menu.")
     print("Please choose from the following options:")
     print("1. Add Photographers")
